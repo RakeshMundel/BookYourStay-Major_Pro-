@@ -9,24 +9,28 @@ const listingSchema=new Schema({
     },
     description:String,
     image:{
-  filename: {
-    type: String,
-    default: "listingimage"
+      url:String,
+      filename:String,
   },
-  url: {
-    type: String,
-    set: (v) => v === "" ? "default link" : v
-  }
-},
+  category: {
+  type: String,
+  required: true,
+  enum: ['Trending','Beaches', 'Rooms','Iconic Cities','Castles','Amazing Pools','Camping','Farms','Arctic','Mountains', 'Desert']
+}
+,
     price:Number,
-    location:[String],
+    location:String,
     country:String,
     reviews:[
       {
         type:Schema.Types.ObjectId,
         ref:"Review",
       }
-    ]
+    ],
+    owner:{
+      type:Schema.Types.ObjectId,
+      ref:"User",
+    },
 });
 
 listingSchema.post("findOneAndDelete",async(listing)=>{

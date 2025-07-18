@@ -4,7 +4,7 @@
         <div class="col-8 offset-2">
             <br><br>
     <h3>Create a new List</h3>
-    <form method="POST" action="/listings" novalidate class="needs-validation">
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
         <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input name="listing[title]" placeholder="Add a title" type="text" class="form-control" required>
@@ -16,11 +16,28 @@
         <textarea name="listing[description]" placeholder="enter description" class="form-control" required></textarea>
          <div class="invalid-feedback">Enter short description</div>
        </div>
-
-        <div class="mb-3">
-            <label for="image" class="form-label">Image Link</label>
-            <input name="listing[image]" placeholder="Enter image URL" type="text" class="form-control">
+       
+       <div class="row">
+        <div class="mb-3 col-md-8">
+            <label for="image" class="form-label">Upload Image</label>
+            <input name="listing[image]" type="file" class="form-control"required>
         </div>
+        <div class="mb-3 col-md-4">
+            <label for="listing" class="form-label">Category:</label>
+            <select name="listing[category]" id="category" class="form-control"required>
+                <option value="Beaches">Beaches</option>
+                <option value="Forests">Iconic Cities</option>
+                <option value="Castles">Castles</option>
+                <option value="Arctic">Arctic</option>
+                <option value="Farms">Farms</option>
+                <option value="Camping">Camping</option>
+                <option value="Amazing Pools">Pools</option>
+                <option value="Mountains">Mountains</option>
+                <option value="Rooms">Rooms</option>
+            </select>
+        </div>
+        </div>
+
 
         <div class="row">
         <div class="mb-3 col-md-4">
@@ -30,8 +47,8 @@
         </div>
 
         <div class="mb-3 col-md-8">
-            <label for="location" class="form-label">Country</label>
-            <input name="listing[location]" placeholder="India" type="text" class="form-control" required>
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" placeholder="India" type="text" class="form-control" required>
              <div class="invalid-feedback">Enter Country</div>
         </div>
         </div>
