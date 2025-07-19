@@ -125,8 +125,8 @@ app.use("/",userRouter);
     let {statusCode=500,message="something went wrong"}=err;
     res.status(statusCode).render("error.ejs",{message});
 });*/
-
-app.listen(3000,()=>{
+const port = process.env.PORT || 3000;
+app.listen(port,()=>{
     console.log("server is listening to port 3000");
 });
   
