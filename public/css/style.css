@@ -20,8 +20,8 @@ body{
 
 /*Footer*/
 .f-info-links a{
-    text-decoration:none;
-    color:#222222;
+    text-decoration:none ;
+    color:#222222 ;
 }
 .f-info-links a:hover{
     text-decoration:underline;
@@ -89,6 +89,7 @@ body{
 /*show page*/
 .show-img{
     height:30vh;
+    
 }
 .btns{
     display:flex;
